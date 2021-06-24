@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JS clock</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,100&display=swap" rel="stylesheet">
+        
+        <style>
+   
+* {
+    color: white;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+p {
+    font-size: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+transform: translate(-50%, -50%);
+text-shadow: 0px 0px 200px blue;
+}
+        </style>
+    </head>
+    <body>
+        <p id="clock"></p>
+        <script>
+setInterval(displayclock, 500);
+function displayclock() {
+    var time = new Date();
+    var hrs = time.getHours();
+    var sec = time.getSeconds();
+    var min = time.getMinutes();
+
+    document.getElementById('clock').innerHTML =
+hrs + ":" + min + ":" + sec;
+}
+        </script>
+    </body>
+</html>
